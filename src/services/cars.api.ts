@@ -13,6 +13,6 @@ export const getAllCars = async (): Promise<ICar[]> => {
 }
 
 export const addCar = async (car:ICarAddProps): Promise<void> => {
-    console.log(car);
-    //await axiosInstance.post('/cars', car); 
+    //console.log(car);
+    await axiosInstance.post('/cars', car); 
 }
