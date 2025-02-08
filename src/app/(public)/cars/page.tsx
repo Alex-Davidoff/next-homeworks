@@ -6,7 +6,9 @@ const CarsPage = async () => {
 
     if (cars){
     return(
+        <div className="page_cars">
         <CarsComponent cars={cars}/>
+        </div>
     )}
 }
 
