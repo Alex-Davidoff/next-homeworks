@@ -1,14 +1,11 @@
 'use server';
 
+import { ICarAddProps } from '@/models/ICar';
 import sql from 'better-sqlite3';
 
 const db = sql('cars.db');
 
-export const carAddAction = async (formdata: FormData) => {
-    console.log(formdata);
-    const brand = formdata.get('brand');
-    const price = formdata.get('price');
-    const year = formdata.get('year');
+export const carAddAction = async ({brand, price, year}: ICarAddProps) => {
     const tstr = `insert into cars (brand, price, year) values (?, ?, ?);`;
     db.prepare(tstr).run(brand, price, year);
 }
